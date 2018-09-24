@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BlogApplication.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color:red;text-align:center;font-style:oblique">**Index**</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1AzFyTkuFD8ptkKCaw4cSpk-kYt_WUOUVzIdXHnR5qGZYtEru" style="width:180px;height:180px;margin-left:380px;margin-bottom:20px;"/>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MediaUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Published)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slug)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.MediaUrl)*@
+            
+            @if (item.MediaUrl != null)
+            {
+
+            <img class="img-responsive" src="@item.MediaUrl" alt="">
+            }
+
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Published)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Details", "DetailsSlug", new { slug = item.Slug })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+body { 
+    background-image: url("https://www.doz.com/cms/wp-content/uploads/2013/08/blog.jpg") 
+}
+</style>

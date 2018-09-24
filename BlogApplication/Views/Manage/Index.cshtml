@@ -1,16 +1,16 @@
 ﻿@model BlogApplication.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage";
+    ViewBag.Title = "Manage Page";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 style="color:red;text-align:center;">@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    <h4 style="color:violet;text-align:center;">Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt style="color:red; font-style:italic;">Password:</dt>
         <dd>
             [
             @if (Model.HasPassword)
@@ -23,7 +23,7 @@
             }
             ]
         </dd>
-        <dt>External Logins:</dt>
+        <dt style="color:red;font-style:italic;">External Logins:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Manage", "ManageLogins") ]
@@ -56,11 +56,11 @@
                 }
             </dd>
         *@
-        <dt>Two-Factor Authentication:</dt>
+        <dt style="color:red;font-style:italic;">Two-Factor Authentication:</dt>
         <dd>
-            <p>
-                There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                for details on setting up this ASP.NET application to support two-factor authentication.
+            <p style="font-style:oblique;color:darkgreen;">
+                **There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication.**
             </p>
             @*@if (Model.TwoFactor)
                 {
@@ -85,3 +85,9 @@
         </dd>
     </dl>
 </div>
+
+<style>
+    body{
+        background-color:gold;
+    }
+</style>

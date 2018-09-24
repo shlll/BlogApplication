@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,18 +9,10 @@ namespace BlogApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            //var post = new BlogPost();
-            //post.Body = "This is the body";
-            //post.Created = DateTime.Now;
-            //post.Published = true;
-            //post.Title = "This is the title";
-            var context = ApplicationDbContext.Create();
-            //context.Posts.Add(post);
-            //context.SaveChanges();
-            var post = context.Posts.Where(p => p.Id == 1).First();
-            return View();
+            return View(db.Posts.ToList());
         }
 
         public ActionResult About()

@@ -1,39 +1,78 @@
 ﻿@model BlogApplication.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Sign up";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 style="color:green; text-align:center;">@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+    <h4 style="color:yellowgreen;text-align:center;">Please get a new account if you are a new register before you log in.</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <div class="container" style="margin:200px;margin-top:50px;">
+        @Html.ValidationSummary("**Email and password are required.**", new { @class = "text-danger" })
+        <div style="display:flex;class=" form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                <p style="color:brown">
+                    **Please input your email**
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+            <p style="color:brown;margin-left:180px">
+                **Input password**
+            </p>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+            <p style="color:brown;margin-left:180px">
+                **Repeat password**
+            </p>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="background-color:yellow" type="submit" class="btn btn-default" value="Register" />
+            </div>
+            <div class="container" style="margin:80px;">
+                <div class="col-md-4">
+                    <h2 style="color:darkblue; display:flex;">The tips for registing the account.</h2>
+                    <ol style="color:violet">
+                        <li>Please use your own email to regist a new account.</li>
+                        <li>Please set the password(Remember:The password must be consist of 1 upper case at least,non-numbers/letters,numbers & 1 lower case at least.</li>
+                        <li>Please repeat your password because of security.</li>
+                        <li>Once you confirmed the email & password, then click the "Register</li>
+                        <li>Regist done.</li>
+                    </ol>
+                    <p style="color:red">**Please click the bottom diagram to show the link**: </p>
+                    <a href="https://www.youtube.com/watch?v=qYVqvZsM2Rc">
+                        <img src="https://help.edublogs.org/files/2014/03/signup64-uamfve.png" style="width:200px;height:200px;" />
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
+    <style>
+        body {
+            background-image: url("https://static1.squarespace.com/static/54810bd2e4b0809df859e687/t/55e4c2a8e4b0f3589b2c646d/1441055412197/")
+        }
+    </style>
+
+
+
+
+
+
 }
 
 @section Scripts {

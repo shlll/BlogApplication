@@ -1,31 +1,249 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blog Post - Start Bootstrap Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/blog-post.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    body { 
+        background-image: url("https://ideasfan.com/media/k2/items/cache/d3b3799d6611d677944f5f86a500beb3_XL.jpg")
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"style="color:gold" href="https://en.wikipedia.org/wiki/Blog">Blog</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul  class="nav navbar-nav">
+                    <li style="display:flex;">
+                        <a style="color:yellowgreen" href="http://localhost:59367/Account/Register">Sign up</a>
+                        <a style="color:gold" href="http://localhost:59367/Account/Login">Sign in</a>
+                        <a style="color:green" href="http://localhost:59367/BlogPosts/Create">Create</a>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+                    </li>
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1 style="color:palevioletred; text-align:center;">Welcome!</h1>
+                <a href="http://blog.sina.com.cn/">
+                <img src="http://live-timely-4jepdssgmc.time.ly/wp-content/uploads/2018/08/welcomeEvents.jpg" style="margin:100px;"/>
+                </a>
+                <h1 style="color:blue;text-align:center;">THE MIKE SHEN'S SPECIAL BLOG</h1>
+                <!-- Author -->
+                <p class="lead" style="text-align:center;">
+                    by <a href="https://www.linkedin.com/in/mike-shen-05b13416a/">Linkedin Blog</a>
+                </p>
+                <hr>
+                <!-- Date/Time -->
+                <p style="color:greenyellow"><span class="glyphicon glyphicon-time"></span> Posted on September 21, 2018 at 9:00 PM</p>
+                <hr>
+                <!-- Preview Image -->
+                <img class="img-responsive" src="https://alleecreative.com/wp-content/uploads/2013/05/Blog-Guys.jpg" alt="">
+                <hr>
+                <!-- Post Content -->
+                <h2 style="text-align:center;color:yellow">What's the Blog?</h2>
+                <p style="color:blue">
+                    Blog is another word for weblog. 
+                </p>
+                <p style="color:darkviolet"> 
+                    A weblog is a website that is like a diary or journal. Most people can create a blog and then write on that blog. Bloggers (a word for people who write on blogs) often write about their opinions and thoughts. A blog containing video material is called a video blog or video log, usually shortened to vlog.
+                </p>
+                <p style="color:violet">
+                    When a person writes on a blog, what they write is in the form of a post, which is a single piece of writing on the blog. Posts often include links to other websites.
+                </p>
+                <p style="color:deeppink">
+                    Blogs can have one or more writers. If they have more than one writer, they are often called community blogs, team blogs, boi or group blogs because the thoughts are made by more than one person.
+                </p>
+                <hr>
+                <!-- Blog Comments -->
+                <!-- Comments Form -->
+                <div class="well" style="background-color:brown;">
+                    <h4 style="color:greenyellow">Share comments what you want:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit!</button>
+                    </form>
+                </div>
+                <hr>
+                <!-- Posted Comments -->
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" style="width:64px;height:64px;"src="https://cdn1.vectorstock.com/i/1000x1000/95/20/pictogram-people-abstract-person-icon-vector-10249520.jpg" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 style="color:darkblue"class="media-heading">
+                            Tom Sim
+                        <small style="color:blue;">September 25, 2018 at 9:30 PM</small>
+                        </h4>
+                        <p style="color:darkviolet">
+                            I started a blog on Blogger and I have an organization question. On my blog which is mostly about travel adventures,
+                            each post I have made just gets tacked on to the previous post.
+                            If I want a new post to stand alone without the other ones,
+                            is there a way to do that or would I have to create a new blog?﻿
+                        </p>
+                    </div>
+                </div>
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" style="width:64px;height:64px;"src="https://image.shutterstock.com/display_pic_with_logo/1878722/357578348/stock-vector-vector-illustration-abstract-person-of-the-elegant-lines-of-the-design-concept-for-the-logo-357578348.jpg" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 style="color:darkviolet"class="media-heading">
+                            Thomas
+                            <small style="color:gold">September 28, 2018 at 1:30 PM</small>
+                        </h4>
+                        <p style="color:darkviolet">
+                            I have watch several of your video and they are great.  I am currently employee with a daughter who needs me at home at this time and your videos have given me new hope and some creative ideas.
+                            Thank you very much for what you do.  Your a very bright light in a very dark tunnel.﻿
+                        </p>
+
+                        <!-- Nested Comment -->
+                        <div style="margin:0px;"class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" style="width:64px;height:64px;" src="https://dcassetcdn.com/design_img/178854/81456/81456_2143122_178854_image.jpg" alt="">
+                            </a>
+                            <div class="media-body">
+                                <h4 style="color:purple"class="media-heading">
+                                    Sam Yawns
+                                    <small style="color:blueviolet">September 29, 2018 at 10:30 PM</small>
+                                </h4>
+                                <p style="color:purple;">
+                                    Very informative video.
+                                    I've got an account.
+                                    When I post, I want to have control of how my pictures are displayed.
+                                    Can I place three in a row, or do a group of pictures on the same blog post?﻿
+                                </p>
+                        </div>
+                        </div>
+                        <!-- End Nested Comment -->
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Sidebar Widgets Column -->
+            
+               <div class="col-md-4">
+               <div class="container" style="display:flex;">
+    <!-- Blog Search Well -->
+    <div class="well"style="background-color:violet;">
+        <h4 style="color:purple;">You can search any topic what you want: </h4>
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+        <!-- /.input-group -->
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!-- Blog Categories Well -->
+    <div class="well" style="background-color:yellowgreen">
+        <h4>Blog Categories</h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">Boottrap Template</a>
+                    </li>
+                    <li>
+                        <a href="#">Original Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Interestig Blog</a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#">Game Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Food Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Book blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Funny Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <!-- Side Widget Well -->
+    <div class="well" style="background-color:yellow">
+        <h4 style="text-align:center;color:blue;">Blog</h4>
+        <p style="color:green;">Blog is another word for weblog.A weblog is a website that is like a diary or journal. Most people can create a blog and then write on that blog. Bloggers (a word for people who write on blogs) often write about their opinions and thoughts. A blog containing video material is called a video blog or video log, usually shortened to vlog.When a person writes on a blog, what they write is in the form of a post, which is a single piece of writing on the blog. Posts often include links to other websites.Blogs can have one or more writers. If they have more than one writer, they are often called community blogs, team blogs, boi or group blogs because the thoughts are made by more than one person.</p>
     </div>
 </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
