@@ -19,20 +19,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BlogPost)
+            @Html.DisplayNameFor(model => model.BlogPost.Title)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BlogPost)
+            @Html.DisplayFor(model => model.BlogPost.Title)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PostId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PostId)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Body)
@@ -69,6 +62,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
     @Html.ActionLink("Back to List", "Index")
 </p>

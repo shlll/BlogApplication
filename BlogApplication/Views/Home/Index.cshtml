@@ -45,13 +45,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul  class="nav navbar-nav">
                     <li style="display:flex;">
-                        <a style="color:yellowgreen" href="http://localhost:59367/Account/Register">Sign up</a>
-                        <a style="color:gold" href="http://localhost:59367/Account/Login">Sign in</a>
-                        <a style="color:green" href="http://localhost:59367/BlogPosts/Create">Create</a>
-
-
+                        <a style="color:yellowgreen" href="@Url.Action("Register","Account")">Sign up</a>
+                        <a style="color:gold" href="@Url.Action("Login", "Account")">Sign in</a>
+                        <a style="color:green" href="@Url.Action("Create","BlogPosts")">Create</a>
                     </li>
-                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

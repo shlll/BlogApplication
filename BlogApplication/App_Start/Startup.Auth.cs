@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using BlogApplication.Models;
+using Owin.Security.Providers.LinkedIn;
 
 namespace BlogApplication
 {
@@ -34,7 +35,7 @@ namespace BlogApplication
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -46,9 +47,9 @@ namespace BlogApplication
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "243074f4-3c8e-4ee2-8b86-15a7339184b5",
+                clientSecret: "rxdCF691%@|;atzmUSPNL77");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
@@ -58,11 +59,21 @@ namespace BlogApplication
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "318392792934-6b14f6rk7ia4c2reqqa0tko85on3i78o.apps.googleusercontent.com",
+                ClientSecret = "b1dfSNayyQ90jd_D65GREyLv",
+            });
+            app.UseLinkedInAuthentication(new LinkedInAuthenticationOptions()
+            {
+                ClientId = "77vdhx8censgeq",
+                ClientSecret = "lRUIXvpGrTY4izKq",
+
+            });
+
+
+
+
         }
     }
 }

@@ -1,13 +1,13 @@
-﻿@model BlogApplication.Models.BlogPost
+﻿@model  BlogApplication.Models.BlogPost
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 style="color:red;text-align:center;font-style:oblique">**This is the Details**</h2>
 
 <div>
-    <h4>BlogPost</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -73,7 +73,56 @@
 
     </dl>
 </div>
+<div style="color:blue;font-style:oblique">
+    Comments: @foreach(var comment in Model.Comments) 
+    {
+        <p>
+            @comment.Body  - written by @comment.Author.DisplayName - time is : @comment.Created.ToString("YY/MM/DD");
+        </p>
+        
+        if(User.IsInRole("Admin") && User.Identity.IsAuthenticated || User.IsInRole("Moderator"))
+        {
+
+            <a href="@Url.Action("Edit","Comments",new { id = comment.Id })">
+                Please edit some comments if you want
+            </a>
+            <a href="@Url.Action("Delete","Comments",new { id = comment.Id })">
+                Please delete some comments if you want
+            </a>
+        }
+            }
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        <p style="font-style:oblique;color:blue;">**Please post on your comment what you want(No more than 280 words):**</p>
+    </div>
+    <div>
+        @using (Html.BeginForm("DetailsSlug", "BlogPosts", FormMethod.Post))
+        {
+        
+            <input type="hidden" name="slug" value="@Model.Slug" />
+            <textarea rows="8" cols="100"></textarea>
+            if (ViewBag.ErrorMessage != null)
+            {
+            <span>@ViewBag.ErrorMessage</span>
+            }
+            <div style="display:block">
+                <button type="submit" style="background-color:blue;color:red;">
+                    Submit!!
+                </button>
+            </div>
+        }
+    </div>
+}
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<style>
+    body{
+        background-color:yellowgreen;
+    }
+</style>

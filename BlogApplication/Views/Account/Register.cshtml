@@ -12,7 +12,7 @@
     <hr />
     <div class="container" style="margin:200px;margin-top:50px;">
         @Html.ValidationSummary("**Email and password are required.**", new { @class = "text-danger" })
-        <div style="display:flex;class=" form-group">
+        <div style="display:flex;"class="form-group">
             @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -39,6 +39,25 @@
                 **Repeat password**
             </p>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.DisplayName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.DisplayName, new { @class = "form-control" })
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -51,7 +70,7 @@
                         <li>Please use your own email to regist a new account.</li>
                         <li>Please set the password(Remember:The password must be consist of 1 upper case at least,non-numbers/letters,numbers & 1 lower case at least.</li>
                         <li>Please repeat your password because of security.</li>
-                        <li>Once you confirmed the email & password, then click the "Register</li>
+                        <li>Once you confirmed the email & password, then click the "Register"</li>
                         <li>Regist done.</li>
                     </ol>
                     <p style="color:red">**Please click the bottom diagram to show the link**: </p>
@@ -74,6 +93,7 @@
 
 
 }
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
